@@ -1,1 +1,11 @@
-# --Website
+# The Darya Website
+
+Here you can find more about our projects and info about us
+
+## Back End
+
+I alwready have developed servers in JS, TS and Rust, but I want do try something diferent. I think is to hard to develop back-end in Rust, and I want some time from JS / TS. So my first idea is to try to use GO to develop this one.
+
+## Front End
+
+I don't want to use JS to develop in front-end, so I will use Rust, to develop it with WASM technologies.
