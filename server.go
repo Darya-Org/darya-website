@@ -15,7 +15,8 @@ func main() {
 	//
 	fileServer := http.FileServer(http.Dir("./public"))
     http.Handle("/", fileServer)
-	http.HandleFunc("/hello", getHello)
+	// use this to handle with the wasm code
+	http.HandleFunc("/style", getHello)
 	http.HandleFunc("/form", formHandler)
 	//
 	if err := http.ListenAndServe(":8080", nil); err != nil {
