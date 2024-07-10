@@ -7,26 +7,19 @@ import (
 	"fmt"
 	"net/http"
 	"log"
-	"io"
 )
 
 func main() {
     fmt.Println("Hello, World!");
-	//
+	// file handle
 	fileServer := http.FileServer(http.Dir("./public"))
     http.Handle("/", fileServer)
-	// use this to handle with the wasm code
-	http.HandleFunc("/style", getHello)
+	
 	http.HandleFunc("/form", formHandler)
 	//
 	if err := http.ListenAndServe(":8080", nil); err != nil {
         log.Fatal(err)
     }
-}
-
-func getHello(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got /hello request\n")
-	io.WriteString(w, "Hello, HTTP!\n")
 }
 
 func formHandler(w http.ResponseWriter, r *http.Request) {

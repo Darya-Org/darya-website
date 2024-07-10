@@ -8,11 +8,12 @@ I alwready have developed servers in JS, TS and Rust, but I want do try somethin
 
 ## Front End
 
-I don't want to use JS to develop in front-end, so I will use Rust, to develop it with WASM technologies.
+[Rust to wasm documentation](https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_Wasm)
 
+I don't want to use JS to develop in front-end, so I will use Rust, to develop it with WASM technologies.
 
 ## Commands:
 
-build wasm code: `wasm-pack build`
+build wasm code: `wasm-pack build --target web --out-dir ./public/script`
 
 build back-end: `go run .`

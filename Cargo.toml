@@ -1,5 +1,6 @@
 [package]
 name = "darya-website"
+authors = ["Felipe S.C. Lorentz <113468900+SCLorentz@users.noreply.github.com>"]
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +8,4 @@ edition = "2021"
 wasm-bindgen = "0.2"
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["cdylib"]
