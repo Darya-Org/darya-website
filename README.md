@@ -14,6 +14,6 @@ I don't want to use JS to develop in front-end, so I will use Rust, to develop i
 
 ## Commands:
 
-build wasm code: `wasm-pack build --target web --out-dir ./public/script`
+use `./build.sh` to build and start the server
 
-build back-end: `go run .`
+if this dosen't work, use `chmod +x build.sh`
