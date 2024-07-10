@@ -15,7 +15,10 @@
             "extensions": [
                 "golang.Go",
                 "eamodio.gitlens",
-                "seepine.md-editor"
+                "seepine.md-editor",
+				"mhutchie.git-graph",
+				"kisstkondoros.vscode-gutter-preview",
+				"naumovs.color-highlight"
             ]
         }
     }
