@@ -1,36 +1,42 @@
 //https://www.digitalocean.com/community/tutorials/how-to-make-an-http-server-in-go
+//https://blog.logrocket.com/creating-a-web-server-with-golang/
 
 package main
 
 import (
-	"errors"
 	"fmt"
-	"io"
 	"net/http"
-	"os"
+	"log"
+	"io"
 )
 
 func main() {
     fmt.Println("Hello, World!");
 	//
-	http.HandleFunc("/", getRoot)
+	fileServer := http.FileServer(http.Dir("./public"))
+    http.Handle("/", fileServer)
 	http.HandleFunc("/hello", getHello)
-
-	err := http.ListenAndServe(":3333", nil)
+	http.HandleFunc("/form", formHandler)
 	//
-	if errors.Is(err, http.ErrServerClosed) {
-		fmt.Printf("server closed\n")
-	} else if err != nil {
-		fmt.Printf("error starting server: %s\n", err)
-		os.Exit(1)
-	}
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+        log.Fatal(err)
+    }
 }
 
-func getRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("got / request\n")
-	io.WriteString(w, "This is my website!\n")
-}
 func getHello(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("got /hello request\n")
 	io.WriteString(w, "Hello, HTTP!\n")
+}
+
+func formHandler(w http.ResponseWriter, r *http.Request) {
+    if err := r.ParseForm(); err != nil {
+        fmt.Fprintf(w, "ParseForm() err: %v", err)
+        return
+    }
+    fmt.Fprintf(w, "POST request successful")
+    name := r.FormValue("name")
+    address := r.FormValue("address")
+
+    fmt.Fprintf(w, "Name = %s\n", name)
+    fmt.Fprintf(w, "Address = %s\n", address)
 }
