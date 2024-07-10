@@ -1,6 +1,12 @@
 @font-face {
     font-family: "Roboto";
-    src: url("/font/roboto.ttf") format("truetype");
+    src: url("/fonts/roboto.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PlaywriteCO";
+    src: url("/fonts/PlaywriteCO.ttf") format("truetype");
     font-display: swap;
 }
 
