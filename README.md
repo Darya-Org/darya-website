@@ -9,3 +9,10 @@ I alwready have developed servers in JS, TS and Rust, but I want do try somethin
 ## Front End
 
 I don't want to use JS to develop in front-end, so I will use Rust, to develop it with WASM technologies.
+
+
+## Commands:
+
+build wasm code: `wasm-pack build`
+
+build back-end: `go run .`
