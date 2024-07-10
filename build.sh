@@ -1,7 +1,10 @@
-echo "building\n\n"
+echo "building"
+echo ""
 
 wasm-pack build --target web --out-dir ./public/script
 
-echo "ok, starting server\n\n"
+echo ""
+echo "wasm builded"
+echo "Starting server..."
 
 go run .
