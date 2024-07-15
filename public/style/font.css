@@ -9,13 +9,7 @@
     src: url("/fonts/PlaywriteCO.ttf") format("truetype");
     font-display: swap;
 }
-
-/*@font-face {
-    font-family: "Emoji";
-    src: url("/font/NotoEmoji-Regular.ttf") format("truetype");
-    font-display: swap;
-}
-
+/*
 @font-face {
     font-family: 'Material Symbols Outlined';
     font-style: normal;
