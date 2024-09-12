@@ -1,7 +1,7 @@
 echo "building"
 echo ""
 
-wasm-pack build --target web --out-dir ./public/script
+wasm-pack build --target web --out-dir ./src/public/script
 
 echo ""
 echo "wasm builded"
