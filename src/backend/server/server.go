@@ -1,7 +1,7 @@
 //https://www.digitalocean.com/community/tutorials/how-to-make-an-http-server-in-go
 //https://blog.logrocket.com/creating-a-web-server-with-golang/
 
-package main
+package server
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"log"
 )
 
-func main() {
+func Run() {
     fmt.Println("The server has started successfully");
 	// file handle
 	fileServer := http.FileServer(http.Dir("./public"))
